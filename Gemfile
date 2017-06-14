@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'activerecord'
 gem 'mysql2'
+gem 'rack'
+gem 'rack-console'
 gem 'rake'
 gem 'grape'
 
