@@ -6,6 +6,7 @@ gem 'rack'
 gem 'rack-console'
 gem 'rake'
 gem 'grape'
+gem 'standalone_migrations'
 
 group :test do
   gem 'awesome_print'
