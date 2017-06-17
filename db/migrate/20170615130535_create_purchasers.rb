@@ -1,6 +1,6 @@
-class Purchaser < ActiveRecord::Migration[5.0]
+class CreatePurchasers < ActiveRecord::Migration[5.0]
   def change
-    create_table :purchase do |t|
+    create_table :purchaser do |t|
       t.string :forename
       t.string :surname
       t.date :birthday
