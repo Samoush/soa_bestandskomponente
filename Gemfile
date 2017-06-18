@@ -14,4 +14,6 @@ group :test do
   gem 'factory_girl'
   gem 'rspec'
   gem 'webmock'
+  gem 'faker'
+  gem 'byebug'
 end
