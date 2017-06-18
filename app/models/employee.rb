@@ -27,12 +27,10 @@ class Employee < ActiveRecord::Base
   private
 
   def defined_role?
-  	#debugger
   	ROLES.include?(role) ? true : errors.add(:role, "not defined")
   end
 
   def set_authentication_key
-  	#debugger
   	self.authentication_key = SecureRandom.uuid
   end
 end
