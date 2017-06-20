@@ -1,6 +1,5 @@
-require File.join(Dir.pwd, 'app', 'models', 'employee')
 require File.join(Dir.pwd, 'spec', 'factories', 'employees')
-require 'factory_girl'
+require 'spec_helper'
 
 RSpec.describe Employee, type: :model do
   describe 'valid employee' do

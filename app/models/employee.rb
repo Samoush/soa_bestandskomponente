@@ -1,6 +1,4 @@
-#FIXME technical debt, requiring of debbuging library should be dne in helpers or env
 require 'active_record'
-require 'byebug'
 
 #FIXME technical debt, has to be separated per environment db (test and development)
 ActiveRecord::Base.establish_connection(

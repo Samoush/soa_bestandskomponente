@@ -16,4 +16,6 @@ group :test do
   gem 'webmock'
   gem 'faker'
   gem 'byebug'
+  gem 'rest-client', '~> 1.8'
+  gem 'rack-test'
 end

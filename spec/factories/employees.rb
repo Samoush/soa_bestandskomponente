@@ -1,6 +1,8 @@
 require 'factory_girl'
 require 'faker'
 
+require File.join(Dir.pwd, 'app', 'models', 'employee')
+
 FactoryGirl.define do
   factory :employee do
     forename { Faker::Name.name }
