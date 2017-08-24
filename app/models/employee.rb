@@ -1,14 +1,3 @@
-require 'active_record'
-
-#FIXME technical debt, has to be separated per environment db (test and development)
-ActiveRecord::Base.establish_connection(
-  adapter:  "mysql2",
-  host:     "localhost",
-  username: "sam",
-  password: "Bla123",
-  database: "soa_bestandskomponente_test"
-)
-
 class Employee < ActiveRecord::Base
   validates :forename, presence: true
   validates :surname, presence: true

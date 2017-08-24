@@ -1,4 +1,5 @@
 require 'grape'
+require 'supa'
 
 require File.join(Dir.pwd, 'app', 'request_handler', 'users', 'authentication')
 require File.join(Dir.pwd, 'app', 'representers', 'users', 'authentication')
@@ -9,10 +10,11 @@ module Resources
 		  resource :users do
 		  	route_param :id do
 			    get do
-			    	debugger
 			      authentication = RequestHandler::Users::Authentication.retrieve(params[:id])
-			      #welches gem und wie?
-			      Representers::Users::Authentication.new(authentication).render
+			      debugger
+			      #present authentication, with: Representers::Users::Authentication 
+			      Representers::Users::Authentication.new(authentication).as_json
+			      #Representers::Users::Authentication.new(authentication).render
 			    end
 			  end
 		  end

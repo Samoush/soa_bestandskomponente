@@ -4,7 +4,7 @@ module RequestHandler
   module Users
     module Authentication
       def self.retrieve(parameters)
-        Authenticator.authenticate(parameters)
+        Conductors::Users::Authenticator.authenticate(parameters)
       end
     end
   end

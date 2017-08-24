@@ -7,6 +7,8 @@ gem 'rack-console'
 gem 'rake'
 gem 'grape'
 gem 'standalone_migrations'
+gem 'supa', '~> 0.4.1'
+gem 'json'
 
 group :test do
   gem 'awesome_print'

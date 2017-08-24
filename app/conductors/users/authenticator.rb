@@ -1,9 +1,18 @@
+require File.join(Dir.pwd, 'app', 'models', 'employee')
+
 module Conductors
   module Users
     module Authenticator
       def self.authenticate(parameters)
-      	#hier wird nach user in db gesucht und wenn gefunden als json mit hilfe von parser 
-      	# mit value true bzw. false zurück geschickt
+      	Auth.new(Employee.find(parameters.to_i).present?)
+      end
+
+      class Auth
+      	attr_accessor :authenticated
+
+      	def initialize(bool)
+      		@authenticated = bool
+      	end
       end
     end
   end

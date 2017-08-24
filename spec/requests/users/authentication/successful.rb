@@ -16,10 +16,12 @@ describe Resources::Users::Authentication, type: :request do
 	let(:user) { FactoryGirl.create(:employee, :role_purchaser) }
 
 	context 'when successful' do
-
+		
 		let!(:response) do 
 			get "/users/#{user.id}", nil, { 'HTTP_ACCEPT' => 'application/json' }
 		end
+
+		let(:json_response_body) { JSON.parse(response.body) }
 
 		it do
 			debugger
