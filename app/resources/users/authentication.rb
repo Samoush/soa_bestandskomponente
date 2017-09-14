@@ -11,10 +11,11 @@ module Resources
 		  	route_param :id do
 			    get do
 			      authentication = RequestHandler::Users::Authentication.retrieve(params[:id])
-			      debugger
+
 			      #present authentication, with: Representers::Users::Authentication 
-			      Representers::Users::Authentication.new(authentication).as_json
+			      #Representers::Users::Authentication.new(authentication).as_json
 			      #Representers::Users::Authentication.new(authentication).render
+			      Representers::Users::Authentication.new(authentication).as_json
 			    end
 			  end
 		  end

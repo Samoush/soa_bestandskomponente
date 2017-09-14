@@ -21,10 +21,27 @@ describe Resources::Users::Authentication, type: :request do
 			get "/users/#{user.id}", nil, { 'HTTP_ACCEPT' => 'application/json' }
 		end
 
-		let(:json_response_body) { JSON.parse(response.body) }
+
+		let(:json_response_body) { JSON.parse(response.body, symbolize_names: true) }
 
 		it do
 			debugger
+			expect(response.status).to eq(200)
+			expect(json_response_body[:data][:authenticated]).to eq(true)
+		end
+	end
+
+	context 'when user does not exist' do
+		
+		let!(:response) do 
+			get "/users/1234", nil, { 'HTTP_ACCEPT' => 'application/json' }
+		end
+
+		let(:json_response_body) { JSON.parse(response.body, symbolize_names: true) }
+
+		it do
+			expect(response.status).to eq(400)
+			expect(json_response_body[:error]).to eq("Couldn't find Employee with 'id'=1234")
 		end
 	end
 end

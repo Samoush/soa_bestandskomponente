@@ -2,7 +2,7 @@ require 'supa'
 
 module Representers
   module Users
-    class Authentication
+    class Authentication 
     	include Supa::Representable
     	
     	define do
